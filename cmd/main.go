@@ -113,9 +113,9 @@ func errorResponse(w http.ResponseWriter, message string, httpStatusCode int) {
 func main() {
 	// <Vg k="VSDK" /> token from <Vg k="VSDK" /> int uid
 	http.HandleFunc("/fetch_rtc_token", rtcTokenHandler)
-	fmt.Printf("Starting server at port 8082\n")
+	fmt.Printf("Starting server at port 8080\n")
 
-	if err := http.ListenAndServe("127.0.0.1:8082", nil); err != nil {
+	if err := http.ListenAndServe(":8080", nil); err != nil {
 		fmt.Println("server deployed")
 		log.Fatal(err)
 	}
